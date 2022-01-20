@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBookList</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+      <h1 class="display-4 text-center" id="main-header">
+        <i class="fa fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List</h1>
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN#</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="book-list">
+            
+          </tbody>
+        </table>
+
+        <div class="popup-bg" id="form">
+          <div class="popup" id="form-main">
+            <div class="heading">
+              <h1 class="display-6 text-center">Add Book</h1><button class="btn btn-danger btn-sm close-popup" >X</button>
+            </div>
+            <form id="book-form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" class="form-control">
+                <div class="invalid-feedback" id="title-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" class="form-control">
+                <div class="invalid-feedback" id="author-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="isbn">ISBN#</label>
+                <input type="text" id="isbn" class="form-control">
+                <div class="invalid-feedback" id="isbn-error"></div>
+              </div class="btns">
+              <input type="submit" value="Add Book" class="btn btn-primary"><button type="button" class="btn btn-danger cancel-form">Cancel</button>
+            </form>
+          </div>  
+        </div>
+        <div class="popup-bg" id="edit">
+          <div class="popup" id="edit-main">
+            <div class="heading">
+              <h1 class="display-6 text-center">Edit Book</h1><button class="btn btn-danger btn-sm close-popup" >X</button>
+            </div>
+            <form id="edit-form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="edit-title" class="form-control">
+                <div class="invalid-feedback" id="edit-title-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="edit-author" class="form-control">
+                <div class="invalid-feedback" id="edit-author-error"></div>
+              </div>
+              <div class="form-group">
+              </div class="btns">
+              <input type="submit" value="Submit" class="btn btn-primary"><button type="button" class="btn btn-danger cancel-form">Cancel</button>
+            <input type="hidden" id="edit-details">
+            </div>
+            </form>
+          </div>  
+        </div>
+          <div class="popup-bg" id="background"><div class="popup">
+            <div class="heading"> <h2>Are you Sure?</h2> <button class="btn btn-danger btn-sm close-popup" >X</button> </div>
+            <form><input type="hidden" id="isbnH"></form>
+            <div class="buttons">
+            <button id="confirm-yes" class="btn btn-danger">Yes</button>
+            <button id="confirm-no" class="btn btn-success">No</button>
+          </div>
+          </div>
+        
+      </div>
+    </div>
+    <div id="add-new">
+      <button class="btn btn-primary">Add New Book</button>
+    </div>
+    
+      <script src="app.js"></script>
+</body>
+</html>
